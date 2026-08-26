@@ -1,6 +1,17 @@
 {
-  "status": "waiting_for_first_run",
+  "status": "partial_initial",
   "year": "115",
   "semester": "1",
-  "courseCount": 0
+  "updatedAtUtc": "2026-08-26T14:34:35+00:00",
+  "courseCount": 1264,
+  "departmentCount": 48,
+  "failedDepartments": {
+    "IN": "IN 抓取失敗：HTTP Error 500: Internal Server Error",
+    "LBA": "LBA 抓取失敗：HTTP Error 500: Internal Server Error"
+  },
+  "missingDepartments": [
+    "IN",
+    "LBA"
+  ],
+  "source": "https://nuk-course-proxy.114961062.workers.dev"
 }
