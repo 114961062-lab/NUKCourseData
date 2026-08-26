@@ -1,0 +1,113 @@
+name: 建立高大89-114歷史課程資料
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nuk-course-history-archive
+  cancel-in-progress: false
+
+jobs:
+  fetch-history:
+    name: 抓取${{ matrix.year }}學年度
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        year:
+          - "089"
+          - "090"
+          - "091"
+          - "092"
+          - "093"
+          - "094"
+          - "095"
+          - "096"
+          - "097"
+          - "098"
+          - "099"
+          - "100"
+          - "101"
+          - "102"
+          - "103"
+          - "104"
+          - "105"
+          - "106"
+          - "107"
+          - "108"
+          - "109"
+          - "110"
+          - "111"
+          - "112"
+          - "113"
+          - "114"
+
+    steps:
+      - name: 取得Repository
+        uses: actions/checkout@v4
+
+      - name: 設定Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 分部別抓取上下學期及暑修
+        env:
+          NUK_PROXY_URL: "https://nuk-course-proxy.114961062.workers.dev"
+          NUK_SEMESTERS: "1,2,3"
+          NUK_HISTORY_RETRIES: "4"
+          NUK_HISTORY_TIMEOUT: "180"
+          NUK_HISTORY_DELAY: "1.5"
+        run: >-
+          python scripts/archive_history.py
+          --year "${{ matrix.year }}"
+          --output-dir build/history
+          --existing-dir data/history
+
+      - name: 保存本年度結果
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuk-history-${{ matrix.year }}
+          path: build/history
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish-history:
+    name: 彙整並提交歷史資料
+    needs: fetch-history
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 取得Repository
+        uses: actions/checkout@v4
+
+      - name: 下載所有年度結果
+        uses: actions/download-artifact@v4
+        with:
+          pattern: nuk-history-*
+          path: data/history
+          merge-multiple: true
+
+      - name: 建立歷史資料索引
+        run: python scripts/build_history_index.py
+
+      - name: 僅在資料變更時提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history
+          if git diff --cached --quiet; then
+            echo "歷史課程資料沒有變更，不建立新commit。"
+            exit 0
+          fi
+          git commit -m "建立高大89-114歷史課程資料"
+          git push
