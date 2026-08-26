@@ -1,0 +1,48 @@
+name: 更新高大課程 CSV
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每6小時執行一次（GitHub Actions 使用 UTC）
+    - cron: "23 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nuk-course-csv-update
+  cancel-in-progress: false
+
+jobs:
+  update-courses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: 取得 Repository
+        uses: actions/checkout@v4
+
+      - name: 設定 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 抓取課程並產生 CSV
+        env:
+          NUK_YEAR: "115"
+          NUK_SEMESTER: "1"
+          NUK_PROXY_URL: "https://nuk-course-proxy.114961062.workers.dev"
+          NUK_MAX_WORKERS: "3"
+        run: python scripts/update_courses.py
+
+      - name: 僅在資料變更時提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/nuk_courses_1151.csv data/metadata.json
+          if git diff --cached --quiet; then
+            echo "課程資料沒有變更，不建立新 commit。"
+            exit 0
+          fi
+          git commit -m "自動更新高大115-1課程資料"
+          git push
