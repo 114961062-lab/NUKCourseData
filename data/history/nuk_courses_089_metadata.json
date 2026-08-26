@@ -1,0 +1,35 @@
+{
+  "year": "089",
+  "status": "ok",
+  "updatedAtUtc": "2026-08-26T17:57:39+00:00",
+  "source": "https://nuk-course-proxy.114961062.workers.dev",
+  "terms": [
+    {
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 84,
+      "file": "nuk_courses_0891.csv",
+      "failedDivisions": {},
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    },
+    {
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 80,
+      "file": "nuk_courses_0892.csv",
+      "failedDivisions": {},
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    },
+    {
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 0,
+      "file": "",
+      "failedDivisions": {},
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    }
+  ]
+}

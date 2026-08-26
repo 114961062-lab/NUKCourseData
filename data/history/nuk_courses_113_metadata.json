@@ -1,0 +1,40 @@
+{
+  "year": "113",
+  "status": "partial",
+  "updatedAtUtc": "2026-08-26T18:31:49+00:00",
+  "source": "https://nuk-course-proxy.114961062.workers.dev",
+  "terms": [
+    {
+      "semester": "1",
+      "status": "partial",
+      "courseCount": 1309,
+      "file": "nuk_courses_1131.csv",
+      "failedDivisions": {
+        "J": "113-1 部別J抓取失敗：HTTP Error 500: Internal Server Error",
+        "E": "113-1 部別E抓取失敗：HTTP Error 500: Internal Server Error"
+      },
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    },
+    {
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1236,
+      "file": "nuk_courses_1132.csv",
+      "failedDivisions": {},
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    },
+    {
+      "semester": "3",
+      "status": "partial",
+      "courseCount": 28,
+      "file": "nuk_courses_1133.csv",
+      "failedDivisions": {
+        "D": "113-3 部別D抓取失敗：HTTP Error 500: Internal Server Error"
+      },
+      "fallbackDivisions": [],
+      "paginationCappedDivisions": []
+    }
+  ]
+}

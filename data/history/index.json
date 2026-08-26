@@ -1,0 +1,701 @@
+{
+  "status": "partial",
+  "range": {
+    "startYear": "089",
+    "endYear": "114"
+  },
+  "updatedAtUtc": "2026-08-26T18:38:17+00:00",
+  "yearCount": 26,
+  "termCount": 78,
+  "courseCount": 61857,
+  "missingYears": [],
+  "partialYears": [
+    "096",
+    "104",
+    "106",
+    "107",
+    "110",
+    "111",
+    "113"
+  ],
+  "years": [
+    {
+      "year": "089",
+      "status": "ok",
+      "metadataFile": "nuk_courses_089_metadata.json"
+    },
+    {
+      "year": "090",
+      "status": "ok",
+      "metadataFile": "nuk_courses_090_metadata.json"
+    },
+    {
+      "year": "091",
+      "status": "ok",
+      "metadataFile": "nuk_courses_091_metadata.json"
+    },
+    {
+      "year": "092",
+      "status": "ok",
+      "metadataFile": "nuk_courses_092_metadata.json"
+    },
+    {
+      "year": "093",
+      "status": "ok",
+      "metadataFile": "nuk_courses_093_metadata.json"
+    },
+    {
+      "year": "094",
+      "status": "ok",
+      "metadataFile": "nuk_courses_094_metadata.json"
+    },
+    {
+      "year": "095",
+      "status": "ok",
+      "metadataFile": "nuk_courses_095_metadata.json"
+    },
+    {
+      "year": "096",
+      "status": "partial",
+      "metadataFile": "nuk_courses_096_metadata.json"
+    },
+    {
+      "year": "097",
+      "status": "ok",
+      "metadataFile": "nuk_courses_097_metadata.json"
+    },
+    {
+      "year": "098",
+      "status": "ok",
+      "metadataFile": "nuk_courses_098_metadata.json"
+    },
+    {
+      "year": "099",
+      "status": "ok",
+      "metadataFile": "nuk_courses_099_metadata.json"
+    },
+    {
+      "year": "100",
+      "status": "ok",
+      "metadataFile": "nuk_courses_100_metadata.json"
+    },
+    {
+      "year": "101",
+      "status": "ok",
+      "metadataFile": "nuk_courses_101_metadata.json"
+    },
+    {
+      "year": "102",
+      "status": "ok",
+      "metadataFile": "nuk_courses_102_metadata.json"
+    },
+    {
+      "year": "103",
+      "status": "ok",
+      "metadataFile": "nuk_courses_103_metadata.json"
+    },
+    {
+      "year": "104",
+      "status": "partial",
+      "metadataFile": "nuk_courses_104_metadata.json"
+    },
+    {
+      "year": "105",
+      "status": "ok",
+      "metadataFile": "nuk_courses_105_metadata.json"
+    },
+    {
+      "year": "106",
+      "status": "partial",
+      "metadataFile": "nuk_courses_106_metadata.json"
+    },
+    {
+      "year": "107",
+      "status": "partial",
+      "metadataFile": "nuk_courses_107_metadata.json"
+    },
+    {
+      "year": "108",
+      "status": "ok",
+      "metadataFile": "nuk_courses_108_metadata.json"
+    },
+    {
+      "year": "109",
+      "status": "ok",
+      "metadataFile": "nuk_courses_109_metadata.json"
+    },
+    {
+      "year": "110",
+      "status": "partial",
+      "metadataFile": "nuk_courses_110_metadata.json"
+    },
+    {
+      "year": "111",
+      "status": "partial",
+      "metadataFile": "nuk_courses_111_metadata.json"
+    },
+    {
+      "year": "112",
+      "status": "ok",
+      "metadataFile": "nuk_courses_112_metadata.json"
+    },
+    {
+      "year": "113",
+      "status": "partial",
+      "metadataFile": "nuk_courses_113_metadata.json"
+    },
+    {
+      "year": "114",
+      "status": "ok",
+      "metadataFile": "nuk_courses_114_metadata.json"
+    }
+  ],
+  "terms": [
+    {
+      "year": "089",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 84,
+      "file": "nuk_courses_0891.csv"
+    },
+    {
+      "year": "089",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 80,
+      "file": "nuk_courses_0892.csv"
+    },
+    {
+      "year": "089",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 0,
+      "file": ""
+    },
+    {
+      "year": "090",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 222,
+      "file": "nuk_courses_0901.csv"
+    },
+    {
+      "year": "090",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 238,
+      "file": "nuk_courses_0902.csv"
+    },
+    {
+      "year": "090",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 0,
+      "file": ""
+    },
+    {
+      "year": "091",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 411,
+      "file": "nuk_courses_0911.csv"
+    },
+    {
+      "year": "091",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 445,
+      "file": "nuk_courses_0912.csv"
+    },
+    {
+      "year": "091",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 0,
+      "file": ""
+    },
+    {
+      "year": "092",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 631,
+      "file": "nuk_courses_0921.csv"
+    },
+    {
+      "year": "092",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 644,
+      "file": "nuk_courses_0922.csv"
+    },
+    {
+      "year": "092",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 7,
+      "file": "nuk_courses_0923.csv"
+    },
+    {
+      "year": "093",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 810,
+      "file": "nuk_courses_0931.csv"
+    },
+    {
+      "year": "093",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 823,
+      "file": "nuk_courses_0932.csv"
+    },
+    {
+      "year": "093",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 54,
+      "file": "nuk_courses_0933.csv"
+    },
+    {
+      "year": "094",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 902,
+      "file": "nuk_courses_0941.csv"
+    },
+    {
+      "year": "094",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 893,
+      "file": "nuk_courses_0942.csv"
+    },
+    {
+      "year": "094",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 14,
+      "file": "nuk_courses_0943.csv"
+    },
+    {
+      "year": "095",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1003,
+      "file": "nuk_courses_0951.csv"
+    },
+    {
+      "year": "095",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1061,
+      "file": "nuk_courses_0952.csv"
+    },
+    {
+      "year": "095",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 16,
+      "file": "nuk_courses_0953.csv"
+    },
+    {
+      "year": "096",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1210,
+      "file": "nuk_courses_0961.csv"
+    },
+    {
+      "year": "096",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 980,
+      "file": "nuk_courses_0962.csv"
+    },
+    {
+      "year": "096",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 20,
+      "file": "nuk_courses_0963.csv"
+    },
+    {
+      "year": "097",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1261,
+      "file": "nuk_courses_0971.csv"
+    },
+    {
+      "year": "097",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1229,
+      "file": "nuk_courses_0972.csv"
+    },
+    {
+      "year": "097",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 18,
+      "file": "nuk_courses_0973.csv"
+    },
+    {
+      "year": "098",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1326,
+      "file": "nuk_courses_0981.csv"
+    },
+    {
+      "year": "098",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1358,
+      "file": "nuk_courses_0982.csv"
+    },
+    {
+      "year": "098",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 18,
+      "file": "nuk_courses_0983.csv"
+    },
+    {
+      "year": "099",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1434,
+      "file": "nuk_courses_0991.csv"
+    },
+    {
+      "year": "099",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1374,
+      "file": "nuk_courses_0992.csv"
+    },
+    {
+      "year": "099",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 24,
+      "file": "nuk_courses_0993.csv"
+    },
+    {
+      "year": "100",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1425,
+      "file": "nuk_courses_1001.csv"
+    },
+    {
+      "year": "100",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1434,
+      "file": "nuk_courses_1002.csv"
+    },
+    {
+      "year": "100",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 21,
+      "file": "nuk_courses_1003.csv"
+    },
+    {
+      "year": "101",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1496,
+      "file": "nuk_courses_1011.csv"
+    },
+    {
+      "year": "101",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1426,
+      "file": "nuk_courses_1012.csv"
+    },
+    {
+      "year": "101",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 21,
+      "file": "nuk_courses_1013.csv"
+    },
+    {
+      "year": "102",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1455,
+      "file": "nuk_courses_1021.csv"
+    },
+    {
+      "year": "102",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1472,
+      "file": "nuk_courses_1022.csv"
+    },
+    {
+      "year": "102",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 26,
+      "file": "nuk_courses_1023.csv"
+    },
+    {
+      "year": "103",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1501,
+      "file": "nuk_courses_1031.csv"
+    },
+    {
+      "year": "103",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1450,
+      "file": "nuk_courses_1032.csv"
+    },
+    {
+      "year": "103",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 34,
+      "file": "nuk_courses_1033.csv"
+    },
+    {
+      "year": "104",
+      "semester": "1",
+      "status": "partial",
+      "courseCount": 1503,
+      "file": "nuk_courses_1041.csv"
+    },
+    {
+      "year": "104",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 1455,
+      "file": "nuk_courses_1042.csv"
+    },
+    {
+      "year": "104",
+      "semester": "3",
+      "status": "partial",
+      "courseCount": 21,
+      "file": "nuk_courses_1043.csv"
+    },
+    {
+      "year": "105",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1579,
+      "file": "nuk_courses_1051.csv"
+    },
+    {
+      "year": "105",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1537,
+      "file": "nuk_courses_1052.csv"
+    },
+    {
+      "year": "105",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 20,
+      "file": "nuk_courses_1053.csv"
+    },
+    {
+      "year": "106",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1617,
+      "file": "nuk_courses_1061.csv"
+    },
+    {
+      "year": "106",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 1527,
+      "file": "nuk_courses_1062.csv"
+    },
+    {
+      "year": "106",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 23,
+      "file": "nuk_courses_1063.csv"
+    },
+    {
+      "year": "107",
+      "semester": "1",
+      "status": "partial",
+      "courseCount": 1574,
+      "file": "nuk_courses_1071.csv"
+    },
+    {
+      "year": "107",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 1482,
+      "file": "nuk_courses_1072.csv"
+    },
+    {
+      "year": "107",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 24,
+      "file": "nuk_courses_1073.csv"
+    },
+    {
+      "year": "108",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1497,
+      "file": "nuk_courses_1081.csv"
+    },
+    {
+      "year": "108",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1519,
+      "file": "nuk_courses_1082.csv"
+    },
+    {
+      "year": "108",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 34,
+      "file": "nuk_courses_1083.csv"
+    },
+    {
+      "year": "109",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1527,
+      "file": "nuk_courses_1091.csv"
+    },
+    {
+      "year": "109",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1515,
+      "file": "nuk_courses_1092.csv"
+    },
+    {
+      "year": "109",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 31,
+      "file": "nuk_courses_1093.csv"
+    },
+    {
+      "year": "110",
+      "semester": "1",
+      "status": "partial",
+      "courseCount": 362,
+      "file": "nuk_courses_1101.csv"
+    },
+    {
+      "year": "110",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 1484,
+      "file": "nuk_courses_1102.csv"
+    },
+    {
+      "year": "110",
+      "semester": "3",
+      "status": "partial",
+      "courseCount": 29,
+      "file": "nuk_courses_1103.csv"
+    },
+    {
+      "year": "111",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1575,
+      "file": "nuk_courses_1111.csv"
+    },
+    {
+      "year": "111",
+      "semester": "2",
+      "status": "partial",
+      "courseCount": 1523,
+      "file": "nuk_courses_1112.csv"
+    },
+    {
+      "year": "111",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 39,
+      "file": "nuk_courses_1113.csv"
+    },
+    {
+      "year": "112",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1517,
+      "file": "nuk_courses_1121.csv"
+    },
+    {
+      "year": "112",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1375,
+      "file": "nuk_courses_1122.csv"
+    },
+    {
+      "year": "112",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 41,
+      "file": "nuk_courses_1123.csv"
+    },
+    {
+      "year": "113",
+      "semester": "1",
+      "status": "partial",
+      "courseCount": 1309,
+      "file": "nuk_courses_1131.csv"
+    },
+    {
+      "year": "113",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1236,
+      "file": "nuk_courses_1132.csv"
+    },
+    {
+      "year": "113",
+      "semester": "3",
+      "status": "partial",
+      "courseCount": 28,
+      "file": "nuk_courses_1133.csv"
+    },
+    {
+      "year": "114",
+      "semester": "1",
+      "status": "ok",
+      "courseCount": 1250,
+      "file": "nuk_courses_1141.csv"
+    },
+    {
+      "year": "114",
+      "semester": "2",
+      "status": "ok",
+      "courseCount": 1219,
+      "file": "nuk_courses_1142.csv"
+    },
+    {
+      "year": "114",
+      "semester": "3",
+      "status": "ok",
+      "courseCount": 34,
+      "file": "nuk_courses_1143.csv"
+    }
+  ]
+}
