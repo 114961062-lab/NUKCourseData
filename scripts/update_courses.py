@@ -182,10 +182,10 @@ def main() -> int:
             try:
                 code, courses = future.result()
                 fetched[code.upper()] = courses
-                print(f"[OK] {code} {unit['name']}：{len(courses)}門")
+                print(f"[OK] {code} {unit['name']}：{len(courses)}門", flush=True)
             except Exception as exc:  # 保留完整錯誤供 Actions log 檢查
                 failures[unit["code"].upper()] = str(exc)
-                print(f"[ERROR] {exc}", file=sys.stderr)
+                print(f"[ERROR] {exc}", file=sys.stderr, flush=True)
 
     rows: list[dict] = []
     unrecoverable: list[str] = []
@@ -198,32 +198,40 @@ def main() -> int:
         old_rows = existing.get(code) or existing.get(unit["code"]) or []
         if old_rows:
             rows.extend(old_rows)
-            print(f"[FALLBACK] {code} 沿用上一版 {len(old_rows)}門")
+            print(f"[FALLBACK] {code} 沿用上一版 {len(old_rows)}門", flush=True)
         else:
             unrecoverable.append(code)
 
     rows = deduplicate(rows)
 
-    if unrecoverable:
-        print(
-            "首次建立資料時仍有單位抓取失敗，為避免提交不完整CSV，已停止更新："
-            + "、".join(unrecoverable),
-            file=sys.stderr,
-        )
-        return 1
-
     if len(rows) < 100:
         print(f"課程總數異常（僅{len(rows)}門），保留原檔並停止更新。", file=sys.stderr)
         return 1
 
+    # 首次建立時，個別單位可能因來源網站短暫異常而失敗。
+    # 只要總課程數已達合理門檻，先建立可用 CSV；後續排程會自動補齊。
+    if unrecoverable:
+        print(
+            "[PARTIAL] 首次建立時下列單位暫未抓取成功，"
+            "已先建立 CSV，下次排程將自動補齊："
+            + "、".join(unrecoverable),
+            file=sys.stderr,
+            flush=True,
+        )
+
     metadata = {
-        "status": "ok" if not failures else "partial_with_fallback",
+        "status": (
+            "ok"
+            if not failures
+            else "partial_initial" if unrecoverable else "partial_with_fallback"
+        ),
         "year": YEAR,
         "semester": SEMESTER,
         "updatedAtUtc": fetched_at,
         "courseCount": len(rows),
         "departmentCount": len(departments),
         "failedDepartments": failures,
+        "missingDepartments": unrecoverable,
         "source": PROXY_URL,
     }
     write_outputs(rows, metadata)
