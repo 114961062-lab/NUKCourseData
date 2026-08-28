@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/nuk_courses_1151.csv data/metadata.json
+          git add data/nuk_courses_1151.csv data/nuk_course_remain_1151.csv data/metadata.json
           if git diff --cached --quiet; then
             echo "課程資料沒有變更，不建立新 commit。"
             exit 0
