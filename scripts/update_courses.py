@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEPARTMENTS_FILE = ROOT / "data" / "departments.json"
 CSV_FILE = ROOT / "data" / "nuk_courses_1151.csv"
+REMAIN_CSV_FILE = ROOT / "data" / "nuk_course_remain_1151.csv"
 METADATA_FILE = ROOT / "data" / "metadata.json"
 
 YEAR = os.getenv("NUK_YEAR", "115")
@@ -37,6 +38,13 @@ FIELDNAMES = [
     "enrolled", "remaining", "teacher", "classroom", "monday", "tuesday",
     "wednesday", "thursday", "friday", "saturday", "sunday",
     "scheduleJson", "restrictions", "notes", "detailUrl", "fetchedAtUtc",
+]
+
+REMAIN_FIELDNAMES = [
+    "id", "year", "semester", "courseId", "courseName", "department",
+    "departmentName", "division", "grade", "className", "capacity",
+    "confirmed", "enrolled", "remaining", "isFull",
+    "demandExceedsCapacity", "remainUpdatedAt", "status",
 ]
 
 
@@ -149,9 +157,59 @@ def deduplicate(rows: list[dict]) -> list[dict]:
     )
 
 
+def parse_count(value) -> int | None:
+    text = str(value if value is not None else "").strip().replace(",", "")
+    if not text:
+        return None
+    try:
+        return int(float(text))
+    except ValueError:
+        return None
+
+
+def build_remain_rows(rows: list[dict]) -> list[dict]:
+    remain_rows: list[dict] = []
+    for row in rows:
+        capacity = parse_count(row.get("capacity"))
+        confirmed = parse_count(row.get("confirmed"))
+        enrolled = parse_count(row.get("enrolled"))
+        remaining = parse_count(row.get("remaining"))
+        has_count = any(
+            value is not None for value in (capacity, confirmed, enrolled, remaining)
+        )
+
+        remain_rows.append({
+            "id": row.get("id", ""),
+            "year": row.get("year", YEAR),
+            "semester": row.get("semester", SEMESTER),
+            "courseId": row.get("courseId", ""),
+            "courseName": row.get("courseName", ""),
+            "department": row.get("department", ""),
+            "departmentName": row.get("departmentName", ""),
+            "division": row.get("division", ""),
+            "grade": row.get("grade", ""),
+            "className": row.get("className", ""),
+            "capacity": "" if capacity is None else capacity,
+            "confirmed": "" if confirmed is None else confirmed,
+            "enrolled": "" if enrolled is None else enrolled,
+            "remaining": "" if remaining is None else remaining,
+            "isFull": "" if remaining is None else str(remaining <= 0).lower(),
+            "demandExceedsCapacity": (
+                ""
+                if capacity is None or enrolled is None
+                else str(enrolled > capacity).lower()
+            ),
+            "remainUpdatedAt": row.get("fetchedAtUtc", ""),
+            "status": "ok" if has_count else "unavailable",
+        })
+
+    return remain_rows
+
+
 def write_outputs(rows: list[dict], metadata: dict) -> None:
     CSV_FILE.parent.mkdir(parents=True, exist_ok=True)
     csv_temp = CSV_FILE.with_suffix(".csv.tmp")
+    remain_csv_temp = REMAIN_CSV_FILE.with_suffix(".csv.tmp")
     metadata_temp = METADATA_FILE.with_suffix(".json.tmp")
 
     with csv_temp.open("w", encoding="utf-8", newline="") as handle:
@@ -159,11 +217,19 @@ def write_outputs(rows: list[dict], metadata: dict) -> None:
         writer.writeheader()
         writer.writerows(rows)
 
+    with remain_csv_temp.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle, fieldnames=REMAIN_FIELDNAMES, extrasaction="ignore"
+        )
+        writer.writeheader()
+        writer.writerows(build_remain_rows(rows))
+
     with metadata_temp.open("w", encoding="utf-8") as handle:
         json.dump(metadata, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
 
     csv_temp.replace(CSV_FILE)
+    remain_csv_temp.replace(REMAIN_CSV_FILE)
     metadata_temp.replace(METADATA_FILE)
 
 
@@ -236,6 +302,7 @@ def main() -> int:
     }
     write_outputs(rows, metadata)
     print(f"完成：共{len(rows)}門課，寫入 {CSV_FILE.relative_to(ROOT)}")
+    print(f"選課人數：寫入 {REMAIN_CSV_FILE.relative_to(ROOT)}")
     return 0
 
 
