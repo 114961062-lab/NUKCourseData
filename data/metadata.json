@@ -1,11 +1,6 @@
 {
-  "status": "ok",
+  "status": "waiting_for_first_run",
   "year": "115",
   "semester": "1",
-  "updatedAtUtc": "2026-08-27T22:25:52+00:00",
-  "courseCount": 1269,
-  "departmentCount": 48,
-  "failedDepartments": {},
-  "missingDepartments": [],
-  "source": "https://nuk-course-proxy.114961062.workers.dev"
+  "courseCount": 0
 }
