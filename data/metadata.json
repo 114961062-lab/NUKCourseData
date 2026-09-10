@@ -1,14 +1,25 @@
 {
-  "status": "partial_with_fallback",
+  "status": "partial_initial",
   "year": "115",
   "semester": "1",
-  "updatedAtUtc": "2026-09-10T11:31:37+00:00",
+  "updatedAtUtc": "2026-09-10T16:32:22+00:00",
   "courseCount": 1271,
   "departmentCount": 48,
   "failedDepartments": {
-    "SC": "SC 抓取失敗：HTTP Error 500: Internal Server Error",
-    "CD": "CD 抓取失敗：HTTP Error 500: Internal Server Error"
+    "MI": "MI 抓取失敗：HTTP Error 500: Internal Server Error",
+    "LI": "LI 抓取失敗：HTTP Error 500: Internal Server Error",
+    "IN": "IN 抓取失敗：HTTP Error 500: Internal Server Error",
+    "WL": "wl 抓取失敗：HTTP Error 500: Internal Server Error",
+    "KH": "kh 抓取失敗：HTTP Error 500: Internal Server Error",
+    "CHS": "CHS 抓取失敗：HTTP Error 500: Internal Server Error",
+    "FL": "fl 抓取失敗：HTTP Error 500: Internal Server Error",
+    "LAD": "LAD 抓取失敗：HTTP Error 500: Internal Server Error",
+    "CCL": "CCL 抓取失敗：HTTP Error 500: Internal Server Error",
+    "LBA": "LBA 抓取失敗：HTTP Error 500: Internal Server Error"
   },
-  "missingDepartments": [],
+  "missingDepartments": [
+    "MI",
+    "CCL"
+  ],
   "source": "https://nuk-course-proxy.114961062.workers.dev"
 }
