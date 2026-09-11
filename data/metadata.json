@@ -1,11 +1,13 @@
 {
-  "status": "ok",
+  "status": "partial_with_fallback",
   "year": "115",
   "semester": "1",
-  "updatedAtUtc": "2026-09-11T11:33:12+00:00",
+  "updatedAtUtc": "2026-09-11T16:36:54+00:00",
   "courseCount": 1271,
   "departmentCount": 48,
-  "failedDepartments": {},
+  "failedDepartments": {
+    "LI": "LI 抓取失敗：HTTP Error 500: Internal Server Error"
+  },
   "missingDepartments": [],
   "source": "https://nuk-course-proxy.114961062.workers.dev"
 }
