@@ -1,15 +1,11 @@
 {
-  "status": "partial_initial",
+  "status": "ok",
   "year": "115",
   "semester": "1",
-  "updatedAtUtc": "2026-09-19T20:50:22+00:00",
+  "updatedAtUtc": "2026-09-20T05:02:19+00:00",
   "courseCount": 1267,
   "departmentCount": 48,
-  "failedDepartments": {
-    "CCM": "CCM 抓取失敗：HTTP Error 500: Internal Server Error"
-  },
-  "missingDepartments": [
-    "CCM"
-  ],
+  "failedDepartments": {},
+  "missingDepartments": [],
   "source": "https://nuk-course-proxy.114961062.workers.dev"
 }
